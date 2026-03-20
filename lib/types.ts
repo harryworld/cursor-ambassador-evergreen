@@ -71,6 +71,30 @@ export interface RecapPhotoCredit {
 	url?: string;
 }
 
+export interface RecapSpeaker {
+	name: string;
+	topic: string;
+	photo?: string;
+	url?: string;
+}
+
+export interface RecapProject {
+	name: string;
+	description: string;
+	author?: string;
+	url?: string;
+}
+
+export interface RecapHighlight {
+	quote: string;
+	author?: string;
+}
+
+export interface RecapResource {
+	label: string;
+	url: string;
+}
+
 export interface RecapData {
 	slug: string;
 	title: string;
@@ -78,6 +102,10 @@ export interface RecapData {
 	attendees?: number;
 	summary: string[];
 	host?: { name: string; logo: string; url?: string };
+	speakers?: RecapSpeaker[];
+	projects?: RecapProject[];
+	highlights?: RecapHighlight[];
+	resources?: RecapResource[];
 	photoCredits?: RecapPhotoCredit[];
 	photos: GalleryPhoto[];
 }

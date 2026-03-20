@@ -26,6 +26,11 @@
 	},
 	"recap": {
 		"title": "Event recap",
+		"speakers": "Speakers",
+		"projects": "Projects showcased",
+		"highlights": "Community feedback",
+		"resources": "Resources",
+		"by": "by",
 		"galleryTitle": "Photos",
 		"gallerySubtitle": "{count} photos from the event",
 		"openPhoto": "Open photo {index}",
