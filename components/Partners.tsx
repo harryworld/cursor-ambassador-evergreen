@@ -35,7 +35,7 @@ const Partners: React.FC = () => {
 									src={partner.logo}
 									alt={partner.name}
 									fill
-									className="object-contain group-hover:scale-105 transition-transform duration-200"
+									className="object-contain opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition duration-300"
 									sizes="(max-width: 768px) 45vw, 20vw"
 								/>
 							</div>

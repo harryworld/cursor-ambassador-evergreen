@@ -67,15 +67,23 @@ const AmbassadorSection: React.FC = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true, margin: '-50px' }}
 							transition={{ duration: 0.3, delay: index * 0.07 }}
-							className="bg-cursor-bg-dark border border-cursor-border rounded-md p-5"
+							className="bg-cursor-bg-dark border border-cursor-border rounded-md p-5 group hover:border-cursor-accent-purple/30 hover:shadow-[0_0_15px_rgba(184,168,200,0.08)] transition-all duration-300"
 						>
 							<div className="flex items-center gap-4">
-								<div className="relative w-14 h-14 rounded-full overflow-hidden border border-cursor-border-emphasis">
-									<Image src={ambassador.photo} alt={ambassador.name} fill className="object-cover" sizes="56px" />
+								<div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-cursor-border-emphasis">
+									<Image
+										src={ambassador.photo}
+										alt={ambassador.name}
+										fill
+										className="object-cover grayscale group-hover:grayscale-0 transition duration-500"
+										sizes="80px"
+									/>
 								</div>
 								<div>
 									<p className="text-cursor-text font-medium">{ambassador.name}</p>
-									{ambassador.role ? <p className="text-cursor-text-muted text-sm">{ambassador.role}</p> : null}
+									{ambassador.role ? (
+										<p className="text-cursor-text-muted text-sm">{ambassador.role}</p>
+									) : null}
 								</div>
 							</div>
 
