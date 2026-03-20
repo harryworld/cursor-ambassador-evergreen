@@ -20,6 +20,7 @@ export const events: CursorEvent[] = [
 		location: 'Your City, Your Country',
 		recapPath: '/recaps/example-event',
 		thumbnail: '/images/events/cursor-event-01.jpg',
+		galleryImages: ['/images/events/cursor-event-02.jpg', '/images/events/cursor-event-04.jpg'],
 		status: 'past',
 	},
 ];

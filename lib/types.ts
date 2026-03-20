@@ -11,6 +11,7 @@ export interface CursorEvent {
 	lumaUrl?: string;
 	recapPath?: string;
 	thumbnail?: string;
+	galleryImages?: string[];
 	status: 'upcoming' | 'past';
 	host?: { name: string; logo: string; url?: string };
 }
