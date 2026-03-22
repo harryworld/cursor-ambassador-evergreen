@@ -34,8 +34,11 @@ const PastEvents: React.FC = () => {
 			transition={{ duration: 0.5 }}
 			className="mb-16 scroll-mt-20"
 		>
-			<h2 className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-4">
+			<p className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-2">
 				{t('home.pastEvents')}
+			</p>
+			<h2 className="text-2xl md:text-3xl font-bold text-cursor-text mb-6">
+				{t('home.pastEventsHeading')}
 			</h2>
 
 			<motion.div
@@ -43,7 +46,7 @@ const PastEvents: React.FC = () => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true, margin: '-50px' }}
-				className="space-y-6"
+				className="space-y-6 -mx-3 sm:mx-0"
 			>
 				{pastEvents.map((event) => {
 					if (!event.recapPath) return null;
@@ -62,7 +65,9 @@ const PastEvents: React.FC = () => {
 					return (
 						<motion.div key={event.id} variants={itemVariants}>
 							<Link href={event.recapPath} className="block group">
-								<div className="bg-[#1B1913] border border-cursor-border rounded-md overflow-hidden transition-all duration-300 hover:border-[#f54e00]/50 hover:shadow-[0_0_20px_rgba(245,78,0,0.08)]">
+								<div className="relative bg-[#1B1913] border border-cursor-border rounded-none sm:rounded-md overflow-hidden transition-all duration-300 hover:border-[#f54e00]/50 hover:shadow-[0_0_30px_rgba(245,78,0,0.12)]">
+									{/* Glow backdrop */}
+									<div className="pointer-events-none absolute -inset-px sm:rounded-md bg-[radial-gradient(ellipse_at_bottom,rgba(245,78,0,0.06),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 									{event.thumbnail ? (
 										<div className="relative">
 											<div

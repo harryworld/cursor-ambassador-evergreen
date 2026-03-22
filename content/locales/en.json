@@ -5,21 +5,26 @@
 	"home": {
 		"featured": "Featured",
 		"upcomingEvents": "Upcoming Events",
+		"upcomingHeading": "What's Next",
 		"register": "Register",
 		"pastEvents": "Past Events",
+		"pastEventsHeading": "Event Recaps",
 		"attendees": "{count} attendees",
 		"hostedBy": "Hosted by",
 		"viewRecap": "View recap",
 		"viewSlides": "View slides"
 	},
 	"ambassadors": {
-		"title": "Cursor {communityName} ambassadors"
+		"title": "Cursor {communityName} ambassadors",
+		"heading": "Meet the Team"
 	},
 	"footer": {
 		"hostingPartners": "Hosting Partners",
 		"community": "Cursor Community",
 		"allEvents": "All events on Luma",
-		"madeWith": "Made with Cursor by ambassadors worldwide"
+		"madeWith": "Made with Cursor by ambassadors worldwide",
+		"joinNext": "Join the next event",
+		"followUs": "Follow Cursor on X"
 	},
 	"featured": {
 		"defaultDescription": "A practical, hands-on workshop series for builders who want to learn Cursor with real workflows."

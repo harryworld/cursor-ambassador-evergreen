@@ -47,8 +47,11 @@ const AmbassadorSection: React.FC = () => {
 			transition={{ duration: 0.5 }}
 			className="mb-16"
 		>
-			<h2 className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-4">
+			<p className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-2">
 				{t('ambassadors.title', { communityName: siteConfig.communityName })}
+			</p>
+			<h2 className="text-2xl md:text-3xl font-bold text-cursor-text mb-6">
+				{t('ambassadors.heading')}
 			</h2>
 
 			<div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">

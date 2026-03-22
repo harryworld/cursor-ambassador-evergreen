@@ -33,8 +33,11 @@ const UpcomingEvents: React.FC = () => {
 			transition={{ duration: 0.5 }}
 			className="mb-16 scroll-mt-20"
 		>
-			<h2 className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-4">
+			<p className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-2">
 				{t('home.upcomingEvents')}
+			</p>
+			<h2 className="text-2xl md:text-3xl font-bold text-cursor-text mb-6">
+				{t('home.upcomingHeading')}
 			</h2>
 
 			{/* Featured first event */}
@@ -43,8 +46,10 @@ const UpcomingEvents: React.FC = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, margin: '-50px' }}
 				transition={{ duration: 0.4 }}
-				className="bg-cursor-surface border border-cursor-border border-l-2 border-l-cursor-accent-blue rounded-lg p-5 mb-6"
+				className="relative overflow-hidden bg-cursor-surface border border-cursor-border border-l-2 border-l-cursor-accent-blue rounded-lg p-5 mb-6"
 			>
+				{/* Glow backdrop */}
+				<div className="pointer-events-none absolute -inset-px rounded-lg bg-[radial-gradient(ellipse_at_bottom_left,rgba(168,180,200,0.06),transparent_60%)]" />
 				<div className="flex items-center gap-2 text-sm text-cursor-text-muted mb-2">
 					<span className="relative flex h-2.5 w-2.5">
 						<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cursor-accent-blue opacity-75" />

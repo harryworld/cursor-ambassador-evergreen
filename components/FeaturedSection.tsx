@@ -17,7 +17,9 @@ const FeaturedSection: React.FC = () => {
 			transition={{ duration: 0.5, delay: 0.2 }}
 			className="mb-16"
 		>
-			<div className="bg-[#1B1913] border border-cursor-border rounded-md p-6">
+			<div className="relative overflow-hidden bg-[#1B1913] border border-cursor-border rounded-md p-6 transition-all duration-300 hover:border-cursor-accent-blue/40 hover:shadow-[0_0_30px_rgba(168,180,200,0.08)] group">
+				{/* Glow backdrop */}
+				<div className="pointer-events-none absolute -inset-px rounded-md bg-[radial-gradient(ellipse_at_top_right,rgba(168,180,200,0.08),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 				<p className="text-xs uppercase tracking-wider text-cursor-text-muted mb-4">{t('home.featured')}</p>
 
 				<h2 className="text-3xl md:text-4xl font-bold tracking-tight text-cursor-text mb-1">
