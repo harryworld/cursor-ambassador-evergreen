@@ -17,7 +17,10 @@ const GlobalEvents: React.FC = () => {
 			className="mb-16"
 		>
 			<div className="bg-[#1B1913] border border-cursor-border rounded-lg p-6">
-				<h2 className="text-xl md:text-2xl font-semibold text-cursor-text mb-2">{t('worldEvents.title')}</h2>
+				<h2 className="text-xl md:text-2xl font-semibold text-cursor-text mb-1">{t('worldEvents.title')}</h2>
+				<p className="text-xs uppercase tracking-wider text-cursor-text-muted font-medium mb-3">
+					{t('worldEvents.subtitle')}
+				</p>
 				<p className="text-cursor-text-muted text-sm md:text-base mb-6">{t('worldEvents.description')}</p>
 				<WorldEventsCarousel />
 			</div>

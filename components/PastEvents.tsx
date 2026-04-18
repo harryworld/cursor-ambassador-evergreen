@@ -49,7 +49,10 @@ const PastEvents: React.FC = () => {
 				className="space-y-6 -mx-3 sm:mx-0"
 			>
 				{pastEvents.map((event) => {
-					if (!event.recapPath) return null;
+					const recapHref = event.recapPath ?? event.lumaUrl;
+					if (!recapHref) return null;
+
+					const linkIsExternal = Boolean(event.lumaUrl && !event.recapPath);
 
 					const displayDate = new Date(`${event.date}T00:00:00`).toLocaleDateString(
 						locale === 'en' ? 'en-US' : locale,
@@ -62,77 +65,89 @@ const PastEvents: React.FC = () => {
 
 					const hasGallery = event.galleryImages && event.galleryImages.length > 0;
 
-					return (
-						<motion.div key={event.id} variants={itemVariants}>
-							<Link href={event.recapPath} className="block group">
-								<div className="relative bg-[#1B1913] border border-cursor-border rounded-none sm:rounded-md overflow-hidden transition-all duration-300 hover:border-[#f54e00]/50 hover:shadow-[0_0_30px_rgba(245,78,0,0.12)]">
-									{/* Glow backdrop */}
-									<div className="pointer-events-none absolute -inset-px sm:rounded-md bg-[radial-gradient(ellipse_at_bottom,rgba(245,78,0,0.06),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-									{event.thumbnail ? (
-										<div className="relative">
-											<div
-												className={`aspect-[2/1] overflow-hidden ${hasGallery ? 'grid grid-cols-3 gap-1' : ''}`}
-											>
-												<div className={`relative ${hasGallery ? 'col-span-2' : ''}`}>
+					const card = (
+						<div className="relative bg-[#1B1913] border border-cursor-border rounded-none sm:rounded-md overflow-hidden transition-all duration-300 hover:border-[#f54e00]/50 hover:shadow-[0_0_30px_rgba(245,78,0,0.12)]">
+							<div className="pointer-events-none absolute -inset-px sm:rounded-md bg-[radial-gradient(ellipse_at_bottom,rgba(245,78,0,0.06),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+							{event.thumbnail ? (
+								<div className="relative">
+									<div
+										className={`aspect-[2/1] overflow-hidden ${hasGallery ? 'grid grid-cols-3 gap-1' : ''}`}
+									>
+										<div className={`relative ${hasGallery ? 'col-span-2' : ''}`}>
+											<Image
+												src={event.thumbnail}
+												alt={event.title}
+												fill
+												className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+												sizes="(max-width: 768px) 100vw, 60vw"
+											/>
+										</div>
+										{hasGallery &&
+											event.galleryImages!.slice(0, 2).map((img, i) => (
+												<div key={i} className="relative">
 													<Image
-														src={event.thumbnail}
-														alt={event.title}
+														src={img}
+														alt=""
 														fill
 														className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-														sizes="(max-width: 768px) 100vw, 60vw"
+														sizes="(max-width: 768px) 33vw, 20vw"
 													/>
 												</div>
-												{hasGallery &&
-													event.galleryImages!.slice(0, 2).map((img, i) => (
-														<div key={i} className="relative">
-															<Image
-																src={img}
-																alt=""
-																fill
-																className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-																sizes="(max-width: 768px) 33vw, 20vw"
-															/>
-														</div>
-													))}
-											</div>
-											{event.host ? (
-												<div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg p-2 flex items-center gap-2">
-													<Image
-														src={event.host.logo}
-														alt={event.host.name}
-														width={20}
-														height={20}
-														className="rounded-full"
-													/>
-													<span className="text-xs text-white">{event.host.name}</span>
-												</div>
-											) : null}
+											))}
+									</div>
+									{event.host ? (
+										<div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm rounded-lg p-2 flex items-center gap-2">
+											<Image
+												src={event.host.logo}
+												alt={event.host.name}
+												width={20}
+												height={20}
+												className="rounded-full"
+											/>
+											<span className="text-xs text-white">{event.host.name}</span>
 										</div>
 									) : null}
-
-									<div className="px-5 py-4">
-										<h3 className="text-lg text-cursor-text font-medium mb-1.5">{event.title}</h3>
-										<div className="flex flex-wrap items-center gap-3 text-sm text-cursor-text-muted mb-1.5">
-											<div className="flex items-center gap-1.5">
-												<Calendar className="w-4 h-4" />
-												<span>{displayDate}</span>
-											</div>
-											{event.attendees ? (
-												<div className="flex items-center gap-1.5">
-													<Users className="w-4 h-4" />
-													<span>
-														{t('home.attendees', { count: String(event.attendees) })}
-													</span>
-												</div>
-											) : null}
-										</div>
-										<div className="flex items-center gap-2 text-sm text-[#f54e00]">
-											<span>{t('home.viewRecap')}</span>
-											<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 ease-out" />
-										</div>
-									</div>
 								</div>
-							</Link>
+							) : null}
+
+							<div className="px-5 py-4">
+								<h3 className="text-lg text-cursor-text font-medium mb-1.5">{event.title}</h3>
+								<div className="flex flex-wrap items-center gap-3 text-sm text-cursor-text-muted mb-1.5">
+									<div className="flex items-center gap-1.5">
+										<Calendar className="w-4 h-4" />
+										<span>{displayDate}</span>
+									</div>
+									{event.attendees ? (
+										<div className="flex items-center gap-1.5">
+											<Users className="w-4 h-4" />
+											<span>{t('home.attendees', { count: String(event.attendees) })}</span>
+										</div>
+									) : null}
+								</div>
+								<div className="flex items-center gap-2 text-sm text-[#f54e00]">
+									<span>{linkIsExternal ? t('home.viewOnLuma') : t('home.viewRecap')}</span>
+									<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200 ease-out" />
+								</div>
+							</div>
+						</div>
+					);
+
+					return (
+						<motion.div key={event.id} variants={itemVariants}>
+							{linkIsExternal ? (
+								<a
+									href={recapHref}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="block group"
+								>
+									{card}
+								</a>
+							) : (
+								<Link href={recapHref} className="block group">
+									{card}
+								</Link>
+							)}
 						</motion.div>
 					);
 				})}

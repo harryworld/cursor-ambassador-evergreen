@@ -1,28 +1,41 @@
 import { WorldEventPhoto } from '@/lib/types';
 
+/** Labels align with real past Cafe Cursor events on Luma (see `content/events.ts`). Photos are template assets. */
 export const worldEventPhotos: WorldEventPhoto[] = [
 	{
-		src: '/images/events/cursor-event-01.jpg',
+		src: '/images/events/cursor-event-02.jpg',
 		location: 'Taipei',
-		date: 'January 2026',
-		alt: 'Wide hall filled with attendees at a Cursor meetup',
+		date: 'Jan 2026 · Cafe Cursor',
+		alt: 'Cafe Cursor Taipei meetup — builders together in Songshan District',
 	},
 	{
 		src: '/images/events/cursor-event-04.jpg',
-		location: 'Taichung',
-		date: 'April 2026',
-		alt: 'Crowd shot from above at a Cursor community meetup',
+		location: 'Boston',
+		date: 'Feb 2026 · Cafe Cursor',
+		alt: 'Cafe Cursor Boston — Cursor community coworking day in Cambridge',
 	},
 	{
-		src: '/images/events/cursor-event-06.jpg',
-		location: 'Tainan',
-		date: 'May 2026',
-		alt: 'Attendees coding and mingling at a Cursor community meetup',
+		src: '/images/events/cursor-event-01.jpg',
+		location: 'Cannes',
+		date: 'Apr 2026 · Cafe Cursor',
+		alt: 'Cafe Cursor Cannes during EthCC week',
 	},
 	{
 		src: '/images/events/cursor-event-03.jpg',
-		location: 'Seoul',
-		date: 'January 2026',
-		alt: 'Collaborative table session at a Cursor meetup',
+		location: 'London',
+		date: 'Dec 2025 · Cafe Cursor',
+		alt: 'Cafe Cursor London — community coworking session',
+	},
+	{
+		src: '/images/events/cursor-event-06.jpg',
+		location: 'Toronto',
+		date: 'Nov 2025 · Cafe Cursor',
+		alt: 'Cafe Cursor Toronto — full-day cafe takeover',
+	},
+	{
+		src: '/images/events/cursor-event-05.jpg',
+		location: 'New York',
+		date: 'Oct 2025 · Cafe Cursor',
+		alt: 'Cafe Cursor New York — Cursor team drop-in day',
 	},
 ];
