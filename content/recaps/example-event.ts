@@ -5,15 +5,15 @@ import { RecapData } from '@/lib/types';
 // include only the ones relevant to your event.
 export const exampleEventRecap: RecapData = {
 	slug: 'example-event',
-	title: 'Cafe Cursor YourCity - Recap',
+	title: 'Cursor Taiwan kickoff — recap',
 	date: 'February 14, 2026',
 	attendees: 38,
 	summary: [
-		'Builders joined for a collaborative, practical day of AI-assisted development with Cursor.',
-		'People shared workflows, paired on projects, and exchanged tips that can be reused by future communities.',
+		'Builders in Taipei gathered for a collaborative day of AI-assisted development with Cursor.',
+		'Attendees shared workflows, paired on projects, and swapped tips for shipping faster as a community.',
 	],
 	host: {
-		name: 'Host Venue',
+		name: 'Taipei venue (placeholder)',
 		logo: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=200&auto=format&fit=crop',
 		url: 'https://example.com/venue',
 	},

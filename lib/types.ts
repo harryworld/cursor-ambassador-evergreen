@@ -18,6 +18,7 @@ export interface CursorEvent {
 
 export interface SocialLinks {
 	x?: string;
+	threads?: string;
 	linkedin?: string;
 	github?: string;
 	website?: string;
@@ -40,9 +41,12 @@ export interface Partner {
 
 export interface FeaturedResource {
 	title: string;
+	titleLocal?: string;
 	description: string;
+	descriptionLocal?: string;
 	href: string;
 	ctaLabel: string;
+	ctaLabelLocal?: string;
 }
 
 export interface HeaderPhoto {

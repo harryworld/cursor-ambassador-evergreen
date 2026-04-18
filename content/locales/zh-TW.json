@@ -1,0 +1,73 @@
+{
+	"nav": {
+		"joinUs": "加入我們"
+	},
+	"home": {
+		"featured": "精選",
+		"upcomingEvents": "即將舉辦",
+		"upcomingHeading": "接下來有什麼",
+		"register": "報名",
+		"pastEvents": "過往活動",
+		"pastEventsHeading": "活動回顧",
+		"attendees": "{count} 位參與者",
+		"hostedBy": "主辦單位",
+		"viewRecap": "查看回顧",
+		"viewSlides": "查看簡報"
+	},
+	"ambassadors": {
+		"title": "{communityName} 大使",
+		"heading": "認識團隊"
+	},
+	"footer": {
+		"hostingPartners": "場地與合作夥伴",
+		"community": "Cursor 全球社群",
+		"allEvents": "在 Luma 上的所有活動",
+		"madeWith": "與全球 Cursor 大使一起，用 Cursor 打造更好的產品。",
+		"joinNext": "報名下一場活動",
+		"followUs": "在 X 上追蹤 Cursor"
+	},
+	"featured": {
+		"defaultDescription": "為想用真實工作流程學會 Cursor 的開發者舉辦的實作主題聚會。"
+	},
+	"recap": {
+		"title": "活動回顧",
+		"speakers": "講者",
+		"projects": "現場展示專案",
+		"highlights": "社群回饋",
+		"resources": "相關資源",
+		"by": "作者",
+		"galleryTitle": "照片",
+		"gallerySubtitle": "活動共 {count} 張照片",
+		"openPhoto": "開啟照片 {index}",
+		"closeGallery": "關閉相簿",
+		"prevPhoto": "上一張",
+		"nextPhoto": "下一張",
+		"photoLabel": "第 {index} 張，共 {total} 張"
+	},
+	"photos": {
+		"title": "關於攝影",
+		"description": "活動中我們可能會拍照與錄影，用於社群媒體或未來的 Cursor 社群內容。",
+		"preference": "若您不希望入鏡：",
+		"option1": "抵達時請告知現場主辦人員",
+		"option2": "我們會盡力尊重您的選擇",
+		"thanks": "感謝您的理解。"
+	},
+	"matchmaking": {
+		"title": "想認識新朋友？",
+		"howItWorks": "怎麼玩",
+		"step1": "到主辦桌抽一張 {numberCard}（數字 1–10）",
+		"step2": "找到與你抽到 {sameNumber} 的夥伴",
+		"step3": "坐在一起交流或共同寫程式",
+		"iceBreakers": "破冰話題",
+		"question1": "「你之前用過 Cursor 嗎？」",
+		"question2": "「你正在用 Cursor 做什麼有趣的專案嗎？」",
+		"question3": "「你最喜歡 Cursor 的哪個功能？」",
+		"numberCard": "隨機號碼卡",
+		"sameNumber": "相同號碼"
+	},
+	"worldEvents": {
+		"title": "全球的 Cafe Cursor",
+		"subtitle": "同一天，不同的時區",
+		"description": "世界各地的 Cursor 使用者一起動手做。即使時區不同，我們仍是同一個社群。"
+	}
+}

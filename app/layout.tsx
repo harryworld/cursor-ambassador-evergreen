@@ -5,11 +5,11 @@ import { siteConfig } from '@/content/site.config';
 import './globals.css';
 
 export const metadata: Metadata = {
-	title: `${siteConfig.communityName} | Cursor Ambassador Site`,
-	description: 'Reusable Cursor Ambassador website template for local communities.',
+	title: `${siteConfig.communityName} | Cursor Ambassador`,
+	description: 'Cursor Taiwan — meetups, recaps, and resources for builders using Cursor across Taiwan.',
 	openGraph: {
 		title: siteConfig.communityName,
-		description: 'Reusable Cursor Ambassador website template for local communities.',
+		description: 'Cursor Taiwan — meetups, recaps, and resources for builders using Cursor across Taiwan.',
 		type: 'website',
 	},
 };

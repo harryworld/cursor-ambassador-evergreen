@@ -6,7 +6,7 @@ import { HeaderPhoto } from '@/lib/types';
 export const headerPhotos: HeaderPhoto[] = [
 	{
 		src: '/images/events/cursor-event-01.jpg',
-		alt: 'Cursor community event group photo',
+		alt: 'Cursor Taiwan community meetup group photo',
 		row: 1,
 		col: 1,
 		rowSpan: 2,

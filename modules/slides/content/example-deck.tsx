@@ -8,9 +8,9 @@ export const exampleDeck: Slide[] = [
 		title: 'Seminar Slides Starter',
 		content: (
 			<div className="space-y-6">
-				<h1 className="text-4xl md:text-5xl font-bold">Seminar Slides for the Event (Template)</h1>
+				<h1 className="text-4xl md:text-5xl font-bold">Cursor Taiwan · workshop slides</h1>
 				<p className="text-cursor-text-muted text-lg">
-					This optional slide engine can be enabled by any ambassador community.
+					Optional slide deck for Taipei meetups — replace with your session content.
 				</p>
 			</div>
 		),
@@ -30,9 +30,9 @@ export const exampleDeck: Slide[] = [
 				code={`export const events = [
   {
     id: 'event-1',
-    title: 'Cafe Cursor YourCity',
-    date: '2026-03-21',
-    location: 'Your City, Your Country',
+    title: 'Cafe Cursor Taipei',
+    date: '2026-05-17',
+    location: 'Taipei, Taiwan',
     status: 'upcoming',
   },
 ]`}

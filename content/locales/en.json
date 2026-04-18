@@ -15,14 +15,14 @@
 		"viewSlides": "View slides"
 	},
 	"ambassadors": {
-		"title": "Cursor {communityName} ambassadors",
+		"title": "{communityName} ambassadors",
 		"heading": "Meet the Team"
 	},
 	"footer": {
 		"hostingPartners": "Hosting Partners",
 		"community": "Cursor Community",
 		"allEvents": "All events on Luma",
-		"madeWith": "Made with Cursor by ambassadors worldwide",
+		"madeWith": "Built with Cursor alongside ambassadors worldwide — from Taipei to the rest of the community.",
 		"joinNext": "Join the next event",
 		"followUs": "Follow Cursor on X"
 	},

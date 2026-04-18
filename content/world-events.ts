@@ -3,6 +3,12 @@ import { WorldEventPhoto } from '@/lib/types';
 export const worldEventPhotos: WorldEventPhoto[] = [
 	{
 		src: '/images/events/cursor-event-02.jpg',
+		location: 'Taipei',
+		date: 'January 2026',
+		alt: 'Cursor meetup in Taipei',
+	},
+	{
+		src: '/images/events/cursor-event-03.jpg',
 		location: 'Seoul',
 		date: 'January 2026',
 		alt: 'Cursor meetup in Seoul',
