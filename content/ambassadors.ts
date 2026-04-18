@@ -4,7 +4,7 @@ import { Ambassador } from '@/lib/types';
 export const ambassadors: Ambassador[] = [
 	{
 		name: 'Harry Ng',
-		role: 'Community lead · 社群主理',
+		role: 'Indie Developer · 獨立開發者',
 		photo: '/images/ambassadors/harry-ng.jpg',
 		links: {
 			x: 'https://x.com/harryworld',
