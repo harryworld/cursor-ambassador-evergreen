@@ -18,7 +18,7 @@ export const siteConfig: SiteConfigBase = {
 	communityNameLocal: '台灣',
 	city: 'Taipei',
 	country: 'Taiwan',
-	lumaUrl: 'https://lu.ma/cursor-taiwan',
+	lumaUrl: 'https://luma.com/cursor-taiwan',
 	cursorCommunityUrl: 'https://cursor.com/community',
 	defaultLocale: 'zh-TW',
 	locales: ['zh-TW', 'en'],
