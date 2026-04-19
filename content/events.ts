@@ -1,19 +1,26 @@
 import { CursorEvent } from '@/lib/types';
 
 const taichungThumbDir = '/images/events/cursor-taichung/1/thumbs';
+const taichungApr2026ThumbDir = '/images/events/cursor-taichung/2/thumbs';
 const tainanThumbDir = '/images/events/cursor-tainan/thumbs';
 
 // Upcoming: https://luma.com/cursor-taiwan
 // Past: Taiwan-only — Luma pages verified where linked.
 export const events: CursorEvent[] = [
 	{
-		id: 'cursor-meetup-taichung',
+		id: 'cursor-meetup-taichung-apr-2026',
 		title: 'Cursor Meetup Taichung',
 		date: '2026-04-19',
 		displayDate: 'April 19, 2026',
 		location: 'Monospace 共同工作空間, West District, Taichung City',
 		lumaUrl: 'https://luma.com/43054c24',
-		status: 'upcoming',
+		recapPath: '/recaps/cursor-meetup-taichung-apr-2026',
+		thumbnail: `${taichungApr2026ThumbDir}/PXL_20260419_061607660.PANO.jpg`,
+		galleryImages: [
+			`${taichungApr2026ThumbDir}/PXL_20260419_063126877.jpg`,
+			`${taichungApr2026ThumbDir}/PXL_20260419_044405150.jpg`,
+		],
+		status: 'past',
 	},
 	{
 		id: 'cursor-meetup-tainan',
