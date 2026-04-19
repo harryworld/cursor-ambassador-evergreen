@@ -1,6 +1,6 @@
 import { CursorEvent } from '@/lib/types';
 
-const taichungThumbDir = '/images/events/cursor-taichung/thumbs';
+const taichungThumbDir = '/images/events/cursor-taichung/1/thumbs';
 const tainanThumbDir = '/images/events/cursor-tainan/thumbs';
 
 // Upcoming: https://luma.com/cursor-taiwan
