@@ -31,6 +31,7 @@
 		"defaultDescription": "A practical, hands-on workshop series for builders who want to learn Cursor with real workflows."
 	},
 	"recap": {
+		"backToHome": "Back to home",
 		"title": "Event recap",
 		"speakers": "Speakers",
 		"projects": "Projects showcased",
@@ -38,7 +39,7 @@
 		"resources": "Resources",
 		"by": "by",
 		"galleryTitle": "Photos",
-		"gallerySubtitle": "{count} photos from the event",
+		"gallerySubtitle": "{count} photos from the day",
 		"openPhoto": "Open photo {index}",
 		"closeGallery": "Close gallery",
 		"prevPhoto": "Previous photo",

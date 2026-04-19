@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Mic, Lightbulb, MessageSquareQuote, Link as LinkIcon } from 'lucide-react';
+import { ArrowLeft, Mic, Lightbulb, MessageSquareQuote, Link as LinkIcon } from 'lucide-react';
 import PhotoGallery from '@/components/PhotoGallery';
 import { RecapData } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
@@ -16,18 +17,26 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 	const { t } = useI18n();
 
 	return (
-		<motion.section
+		<motion.article
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5 }}
 			className="mb-8"
 		>
-			<div className="bg-[#1B1913] border border-cursor-border rounded-lg p-8">
-				<h2 className="text-xl font-semibold text-cursor-text mb-2">{recap.title}</h2>
-				<p className="text-cursor-text-muted text-sm mb-6">{recap.date}</p>
+			<Link
+				href="/"
+				className="inline-flex items-center gap-2 text-sm text-cursor-text-muted hover:text-cursor-text transition-colors mb-10"
+			>
+				<ArrowLeft className="w-4 h-4" aria-hidden />
+				{t('recap.backToHome')}
+			</Link>
+
+			<header className="mb-10 max-w-3xl">
+				<h1 className="text-3xl md:text-4xl font-bold text-cursor-text tracking-tight leading-tight">{recap.title}</h1>
+				<p className="text-cursor-text-muted text-base mt-4">{recap.date}</p>
 
 				{recap.host ? (
-					<div className="text-cursor-text-muted text-sm mb-6 flex items-center gap-2">
+					<div className="text-cursor-text-muted text-sm mt-5 flex items-center gap-2 flex-wrap">
 						<span>{t('home.hostedBy')}</span>
 						<a
 							href={recap.host.url || '#'}
@@ -48,22 +57,26 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 				) : null}
 
 				{recap.attendees ? (
-					<p className="text-cursor-text text-lg leading-relaxed mb-4">
+					<p className="text-cursor-text text-lg leading-relaxed mt-6">
 						{t('home.attendees', { count: String(recap.attendees) })}
 					</p>
 				) : null}
-				<div className="text-cursor-text-muted text-sm leading-relaxed space-y-3">
+			</header>
+
+			<div className="bg-[#1B1913] border border-cursor-border rounded-lg p-8 mb-10">
+				<div className="text-cursor-text text-base leading-relaxed space-y-4 max-w-3xl">
 					{recap.summary.map((paragraph, index) => (
-						<p key={index}>{paragraph}</p>
+						<p key={index} className="text-cursor-text-secondary">
+							{paragraph}
+						</p>
 					))}
 				</div>
 
-				{/* Speakers */}
 				{recap.speakers && recap.speakers.length > 0 ? (
-					<div className="border-t border-cursor-border mt-6 pt-6">
+					<div className="border-t border-cursor-border mt-8 pt-8">
 						<div className="flex items-center gap-2 mb-4">
 							<Mic className="w-4 h-4 text-cursor-accent-blue" />
-							<h3 className="text-sm font-medium text-cursor-text">{t('recap.speakers')}</h3>
+							<h2 className="text-sm font-medium text-cursor-text">{t('recap.speakers')}</h2>
 						</div>
 						<div className="grid gap-3 sm:grid-cols-2">
 							{recap.speakers.map((speaker) => (
@@ -103,12 +116,11 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 					</div>
 				) : null}
 
-				{/* Projects */}
 				{recap.projects && recap.projects.length > 0 ? (
-					<div className="border-t border-cursor-border mt-6 pt-6">
+					<div className="border-t border-cursor-border mt-8 pt-8">
 						<div className="flex items-center gap-2 mb-4">
 							<Lightbulb className="w-4 h-4 text-cursor-accent-yellow" />
-							<h3 className="text-sm font-medium text-cursor-text">{t('recap.projects')}</h3>
+							<h2 className="text-sm font-medium text-cursor-text">{t('recap.projects')}</h2>
 						</div>
 						<div className="grid gap-3 sm:grid-cols-2">
 							{recap.projects.map((project) => (
@@ -140,12 +152,11 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 					</div>
 				) : null}
 
-				{/* Highlights / Feedback */}
 				{recap.highlights && recap.highlights.length > 0 ? (
-					<div className="border-t border-cursor-border mt-6 pt-6">
+					<div className="border-t border-cursor-border mt-8 pt-8">
 						<div className="flex items-center gap-2 mb-4">
 							<MessageSquareQuote className="w-4 h-4 text-cursor-accent-purple" />
-							<h3 className="text-sm font-medium text-cursor-text">{t('recap.highlights')}</h3>
+							<h2 className="text-sm font-medium text-cursor-text">{t('recap.highlights')}</h2>
 						</div>
 						<div className="space-y-3">
 							{recap.highlights.map((highlight, index) => (
@@ -167,12 +178,11 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 					</div>
 				) : null}
 
-				{/* Resources */}
 				{recap.resources && recap.resources.length > 0 ? (
-					<div className="border-t border-cursor-border mt-6 pt-6">
+					<div className="border-t border-cursor-border mt-8 pt-8">
 						<div className="flex items-center gap-2 mb-4">
 							<LinkIcon className="w-4 h-4 text-cursor-accent-green" />
-							<h3 className="text-sm font-medium text-cursor-text">{t('recap.resources')}</h3>
+							<h2 className="text-sm font-medium text-cursor-text">{t('recap.resources')}</h2>
 						</div>
 						<ul className="space-y-2">
 							{recap.resources.map((resource) => (
@@ -191,33 +201,33 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 						</ul>
 					</div>
 				) : null}
-
-				<PhotoGallery photos={recap.photos} embedded />
-
-				{recap.photoCredits && recap.photoCredits.length > 0 ? (
-					<div className="border-t border-cursor-border mt-6 pt-6 text-sm text-cursor-text-muted">
-						<span className="mr-1">Photo credits:</span>
-						{recap.photoCredits.map((credit, index) => (
-							<span key={`${credit.name}-${index}`}>
-								{credit.url ? (
-									<a
-										href={credit.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-cursor-text hover:underline"
-									>
-										{credit.name}
-									</a>
-								) : (
-									<span className="text-cursor-text">{credit.name}</span>
-								)}
-								{index < recap.photoCredits!.length - 1 ? <span>, </span> : <span>.</span>}
-							</span>
-						))}
-					</div>
-				) : null}
 			</div>
-		</motion.section>
+
+			<PhotoGallery photos={recap.photos} embedded={false} />
+
+			{recap.photoCredits && recap.photoCredits.length > 0 ? (
+				<div className="mt-6 text-sm text-cursor-text-muted">
+					<span className="mr-1">Photo credits:</span>
+					{recap.photoCredits.map((credit, index) => (
+						<span key={`${credit.name}-${index}`}>
+							{credit.url ? (
+								<a
+									href={credit.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-cursor-text hover:underline"
+								>
+									{credit.name}
+								</a>
+							) : (
+								<span className="text-cursor-text">{credit.name}</span>
+							)}
+							{index < recap.photoCredits!.length - 1 ? <span>, </span> : <span>.</span>}
+						</span>
+					))}
+				</div>
+			) : null}
+		</motion.article>
 	);
 };
 

@@ -66,8 +66,11 @@ export interface HeaderPhoto {
 }
 
 export interface GalleryPhoto {
+	/** Full-size image (lightbox / OG). */
 	src: string;
 	alt: string;
+	/** Smaller asset for grids; defaults to `src` when omitted. */
+	thumbSrc?: string;
 }
 
 export interface RecapPhotoCredit {

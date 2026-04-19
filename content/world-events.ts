@@ -3,10 +3,10 @@ import { WorldEventPhoto } from '@/lib/types';
 /** Labels align with real past Cafe Cursor events on Luma (see `content/events.ts`). Photos are template assets. */
 export const worldEventPhotos: WorldEventPhoto[] = [
 	{
-		src: '/images/events/cursor-event-02.jpg',
-		location: 'Taipei',
-		date: 'Jan 2026 · Cafe Cursor',
-		alt: 'Cafe Cursor Taipei meetup — builders together in Songshan District',
+		src: '/images/events/cursor-taichung/thumbs/PXL_20251230_103813965.jpg',
+		location: 'Taichung',
+		date: 'Dec 2025 · Cursor Meetup',
+		alt: 'Cursor Meetup Taichung — builders together at Monospace',
 	},
 	{
 		src: '/images/events/cursor-event-04.jpg',

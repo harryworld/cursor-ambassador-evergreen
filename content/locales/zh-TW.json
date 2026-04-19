@@ -31,6 +31,7 @@
 		"defaultDescription": "為想用真實工作流程學會 Cursor 的開發者舉辦的實作主題聚會。"
 	},
 	"recap": {
+		"backToHome": "返回首頁",
 		"title": "活動回顧",
 		"speakers": "講者",
 		"projects": "現場展示專案",
@@ -38,7 +39,7 @@
 		"resources": "相關資源",
 		"by": "作者",
 		"galleryTitle": "照片",
-		"gallerySubtitle": "活動共 {count} 張照片",
+		"gallerySubtitle": "當天共 {count} 張照片",
 		"openPhoto": "開啟照片 {index}",
 		"closeGallery": "關閉相簿",
 		"prevPhoto": "上一張",

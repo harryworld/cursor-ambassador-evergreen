@@ -23,6 +23,9 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, embedded = false })
 
 	const currentPhoto = photos[currentIndex];
 
+	const rowCount = Math.ceil(photos.length / 3);
+	const rows = Array.from({ length: rowCount }, (_, rowIndex) => photos.slice(rowIndex * 3, rowIndex * 3 + 3));
+
 	const content = (
 		<>
 			<div className="flex items-baseline justify-between gap-4 mb-6">
@@ -38,29 +41,40 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, embedded = false })
 				</div>
 			</div>
 
-			<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-				{photos.map((photo, index) => (
-					<motion.button
-						key={`${photo.src}-${index}`}
-						type="button"
-						initial={{ opacity: 0, scale: 0.98 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.25, delay: Math.min(index * 0.02, 0.25) }}
-						className="relative aspect-square overflow-hidden rounded-lg border border-cursor-border bg-cursor-bg-dark text-left"
-						onClick={() => {
-							setCurrentIndex(index);
-							setIsFullscreen(true);
-						}}
-						aria-label={t('recap.openPhoto', { index: String(index + 1) })}
+			<div className="space-y-2 md:space-y-3">
+				{rows.map((rowPhotos, rowIndex) => (
+					<div
+						key={`row-${rowIndex}`}
+						className="grid w-full grid-cols-3 gap-2 md:gap-3 aspect-[21/9] min-h-[100px] sm:min-h-[120px] md:min-h-[140px]"
 					>
-						<Image
-							src={photo.src}
-							alt={photo.alt}
-							fill
-							className="object-cover hover:scale-105 transition-transform duration-300"
-							sizes="(max-width: 768px) 50vw, 33vw"
-						/>
-					</motion.button>
+						{rowPhotos.map((photo, colIndex) => {
+							const index = rowIndex * 3 + colIndex;
+							const spanThree = rowPhotos.length === 1 ? 'col-span-3' : '';
+							return (
+								<motion.button
+									key={`${photo.src}-${index}`}
+									type="button"
+									initial={{ opacity: 0, scale: 0.98 }}
+									animate={{ opacity: 1, scale: 1 }}
+									transition={{ duration: 0.25, delay: Math.min(index * 0.02, 0.25) }}
+									className={`relative min-h-0 h-full overflow-hidden rounded-lg border border-cursor-border bg-cursor-bg-dark text-left ${spanThree}`}
+									onClick={() => {
+										setCurrentIndex(index);
+										setIsFullscreen(true);
+									}}
+									aria-label={t('recap.openPhoto', { index: String(index + 1) })}
+								>
+									<Image
+										src={photo.thumbSrc ?? photo.src}
+										alt={photo.alt}
+										fill
+										className="object-cover hover:scale-105 transition-transform duration-300"
+										sizes="34vw"
+									/>
+								</motion.button>
+							);
+						})}
+					</div>
 				))}
 			</div>
 

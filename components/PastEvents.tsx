@@ -71,9 +71,17 @@ const PastEvents: React.FC = () => {
 							{event.thumbnail ? (
 								<div className="relative">
 									<div
-										className={`aspect-[2/1] overflow-hidden ${hasGallery ? 'grid grid-cols-3 gap-1' : ''}`}
+										className={`relative aspect-[2/1] overflow-hidden ${
+											hasGallery ? 'grid grid-cols-3 grid-rows-2 gap-1' : ''
+										}`}
 									>
-										<div className={`relative ${hasGallery ? 'col-span-2' : ''}`}>
+										<div
+											className={
+												hasGallery
+													? 'relative min-h-0 col-span-2 row-span-2'
+													: 'absolute inset-0'
+											}
+										>
 											<Image
 												src={event.thumbnail}
 												alt={event.title}
@@ -84,7 +92,7 @@ const PastEvents: React.FC = () => {
 										</div>
 										{hasGallery &&
 											event.galleryImages!.slice(0, 2).map((img, i) => (
-												<div key={i} className="relative">
+												<div key={i} className="relative min-h-0">
 													<Image
 														src={img}
 														alt=""

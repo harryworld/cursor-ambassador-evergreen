@@ -1,7 +1,10 @@
 import { CursorEvent } from '@/lib/types';
 
+const taichungThumbDir = '/images/events/cursor-taichung/thumbs';
+const tainanThumbDir = '/images/events/cursor-tainan/thumbs';
+
 // Upcoming: https://luma.com/cursor-taiwan
-// Past: Taiwan-only — Luma pages verified.
+// Past: Taiwan-only — Luma pages verified where linked.
 export const events: CursorEvent[] = [
 	{
 		id: 'cursor-meetup-taichung',
@@ -22,39 +25,28 @@ export const events: CursorEvent[] = [
 		status: 'upcoming',
 	},
 	{
-		id: 'cafe-cursor-taipei-2026',
-		title: 'Cafe Cursor Taipei',
-		date: '2026-01-10',
-		displayDate: 'January 10, 2026',
-		location: 'Songshan District, Taipei City',
-		lumaUrl: 'https://luma.com/o8nl25qj',
-		attendees: 163,
-		thumbnail: '/images/events/cursor-event-02.jpg',
-		galleryImages: ['/images/events/cursor-event-01.jpg', '/images/events/cursor-event-04.jpg'],
+		id: 'cursor-meetup-taichung-dec-2025',
+		title: 'Cursor Meetup Taichung',
+		date: '2025-12-30',
+		displayDate: 'December 30, 2025',
+		location: 'Monospace 共同工作空間, West District, Taichung City',
+		recapPath: '/recaps/cursor-meetup-taichung',
+		thumbnail: `${taichungThumbDir}/PXL_20251230_103813965.jpg`,
+		galleryImages: [
+			`${taichungThumbDir}/PXL_20251230_105946099.jpg`,
+			`${taichungThumbDir}/PXL_20251230_112137781.jpg`,
+		],
 		status: 'past',
 	},
 	{
-		id: 'cursor-meetup-taipei-2025-12',
-		title: 'Cursor Meetup Taipei',
-		date: '2025-12-22',
-		displayDate: 'December 22, 2025',
-		location: 'Songshan District, Taipei City',
-		lumaUrl: 'https://luma.com/111dgnnm',
-		attendees: 128,
-		thumbnail: '/images/events/cursor-event-03.jpg',
-		galleryImages: ['/images/events/cursor-event-05.jpg', '/images/events/cursor-event-06.jpg'],
-		status: 'past',
-	},
-	{
-		id: 'cursor-meetup-taipei-2025-06',
-		title: 'Cursor Meetup Taipei',
-		date: '2025-06-22',
-		displayDate: 'June 22, 2025',
-		location: 'Songshan District, Taipei City',
-		lumaUrl: 'https://luma.com/jdxwyx1j',
-		attendees: 74,
-		thumbnail: '/images/events/cursor-event-05.jpg',
-		galleryImages: ['/images/events/cursor-event-07.jpg', '/images/events/cursor-event-01.jpg'],
+		id: 'cursor-meetup-tainan-jan-2026',
+		title: 'Cursor Meetup Tainan 台南',
+		date: '2026-01-31',
+		displayDate: 'January 31, 2026',
+		location: 'Good Ideas Studio, West Central District, Tainan City',
+		recapPath: '/recaps/cursor-meetup-tainan',
+		thumbnail: `${tainanThumbDir}/PXL_20260131_055131721.jpg`,
+		galleryImages: [`${tainanThumbDir}/PXL_20260131_061842184.jpg`, `${tainanThumbDir}/PXL_20260131_062903151.jpg`],
 		status: 'past',
 	},
 ];
