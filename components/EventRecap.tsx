@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowLeft, Mic, Lightbulb, MessageSquareQuote, Link as LinkIcon } from 'lucide-react';
+import { siThreads } from 'simple-icons';
 import PhotoGallery from '@/components/PhotoGallery';
 import { RecapData } from '@/lib/types';
 import { useI18n } from '@/lib/i18n';
@@ -12,6 +13,12 @@ import { useI18n } from '@/lib/i18n';
 interface EventRecapProps {
 	recap: RecapData;
 }
+
+const ThreadsIcon: React.FC = () => (
+	<svg viewBox="0 0 24 24" aria-hidden className="w-4 h-4">
+		<path d={siThreads.path} fill="currentColor" />
+	</svg>
+);
 
 const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 	const { t } = useI18n();
@@ -96,19 +103,56 @@ const EventRecap: React.FC<EventRecapProps> = ({ recap }) => {
 										</div>
 									) : null}
 									<div className="min-w-0">
-										{speaker.url ? (
-											<a
-												href={speaker.url}
-												target="_blank"
-												rel="noopener noreferrer"
-												className="text-cursor-text font-medium text-sm hover:underline"
-											>
-												{speaker.name}
-											</a>
-										) : (
-											<p className="text-cursor-text font-medium text-sm">{speaker.name}</p>
-										)}
+										<div className="flex items-center gap-2 flex-wrap min-w-0">
+											{speaker.url ? (
+												<a
+													href={speaker.url}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="text-cursor-text font-medium text-sm hover:underline min-w-0"
+												>
+													{speaker.name}
+												</a>
+											) : (
+												<p className="text-cursor-text font-medium text-sm min-w-0">{speaker.name}</p>
+											)}
+											{speaker.threads ? (
+												<a
+													href={speaker.threads}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="shrink-0 p-1.5 -m-1.5 rounded-md border border-transparent text-cursor-text-muted hover:text-cursor-text hover:border-cursor-border transition-colors"
+													aria-label={t('recap.speakerThreads', { name: speaker.name })}
+												>
+													<ThreadsIcon />
+												</a>
+											) : null}
+										</div>
 										<p className="text-cursor-text-muted text-xs mt-0.5">{speaker.topic}</p>
+										{speaker.slidesUrl ? (
+											<p className="mt-2">
+												{speaker.slidesUrl.startsWith('/') &&
+												!speaker.slidesUrl.toLowerCase().endsWith('.pdf') ? (
+													<Link
+														href={speaker.slidesUrl}
+														className="text-xs text-[#f54e00] hover:underline inline-flex items-center gap-1"
+													>
+														{t('home.viewSlides')}
+														<LinkIcon className="w-3 h-3" />
+													</Link>
+												) : (
+													<a
+														href={speaker.slidesUrl}
+														target="_blank"
+														rel="noopener noreferrer"
+														className="text-xs text-[#f54e00] hover:underline inline-flex items-center gap-1"
+													>
+														{t('home.viewSlides')}
+														<LinkIcon className="w-3 h-3" />
+													</a>
+												)}
+											</p>
+										) : null}
 									</div>
 								</div>
 							))}

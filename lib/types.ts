@@ -83,6 +83,9 @@ export interface RecapSpeaker {
 	topic: string;
 	photo?: string;
 	url?: string;
+	threads?: string;
+	/** Deck PDF, Google Slides, Speaker Deck, etc. */
+	slidesUrl?: string;
 }
 
 export interface RecapProject {

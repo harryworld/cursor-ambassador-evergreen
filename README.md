@@ -19,7 +19,7 @@ Open `http://localhost:3000`.
 
 - `app/page.tsx`: homepage composition (hero, featured, events, ambassadors, partners, world events).
 - `app/recaps/[slug]/page.tsx`: dynamic recap page route.
-- `app/slides/[id]/page.tsx`: optional workshop slides route.
+- `app/slides/[[...slug]]/page.tsx`: workshop slides — `/slides/:n` (example deck) or `/slides/:deck/:n`.
 
 ### Core components
 
@@ -90,8 +90,8 @@ To add a recap:
 
 Slides are optional and live in `modules/slides/`.
 
-- Data source: `modules/slides/content/example-deck.tsx`
-- Route: `app/slides/[id]/page.tsx`
+- Data source: `modules/slides/content/*.tsx` and registry `modules/slides/decks.ts`
+- Route: `/slides/{deck}/{slideIndex}` (e.g. `/slides/example/1`)
 
 If your community does not use slides, remove links to `/slides/*` from content.
 

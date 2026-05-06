@@ -36,6 +36,39 @@ export const cursorMeetupTaichungApr2026Recap: RecapData = {
 		'We returned to Monospace in Taichung for another afternoon of Cursor workflows, hallway demos, and shipping stories from the community.',
 		'Thank you to everyone who showed up, shared their setups, and made the room feel welcoming. See you at the next meetup.',
 	],
+	// Lineup + Threads: https://www.threads.com/@iamraven.tw/post/DXTp3VLGLTs · Luma: https://luma.com/43054c24
+	// Speaker PDFs live under `public/slides/` and are served from `/slides/...`.
+	speakers: [
+		{
+			name: 'Raven（@iamraven.tw）',
+			topic: 'Lightning share — OpenClaw and community takeaways',
+			threads: 'https://www.threads.com/@iamraven.tw',
+			slidesUrl: '/slides/611126659647275366_RavenAI.pdf',
+		},
+		{
+			name: 'Hana（花水木 @hanamizuki）',
+			topic: 'Mojo — a live AI agent, data sources, and practical skills',
+			threads: 'https://www.threads.com/@hanamizuki',
+			slidesUrl: '/slides/611480740324704359_cursor-meetup-hana.pdf',
+		},
+		{
+			name: 'Jax（@brainness.ai）',
+			topic: 'OpenClaw for coaching — client training plans and AI practice',
+			threads: 'https://www.threads.com/@brainness.ai',
+			slidesUrl: '/slides/brainess.pdf',
+		},
+		{
+			name: 'Roy（酪梨 Roy · @roy.ai.coach）',
+			topic: 'Startup AI adoption — multi-agent teams for product development',
+			threads: 'https://www.threads.com/@roy.ai.coach',
+			slidesUrl: '/slides/612313985991835972_20260419_Mono_AI.pdf',
+		},
+		{
+			name: 'Codemeteor（@codemeteor）',
+			topic: 'Claude Canvas — visual workflows for team communication',
+			threads: 'https://www.threads.com/@codemeteor',
+		},
+	],
 	photos: taichungAprFiles.map((file, i) =>
 		photo(file, `Cursor Meetup Taichung — community moment ${i + 1}`),
 	),

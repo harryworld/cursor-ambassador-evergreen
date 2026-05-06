@@ -38,6 +38,7 @@
 		"highlights": "社群回饋",
 		"resources": "相關資源",
 		"by": "作者",
+		"speakerThreads": "{name} 的 Threads",
 		"galleryTitle": "照片",
 		"gallerySubtitle": "當天共 {count} 張照片",
 		"openPhoto": "開啟照片 {index}",

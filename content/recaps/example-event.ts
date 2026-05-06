@@ -25,6 +25,8 @@ export const exampleEventRecap: RecapData = {
 			topic: 'Building full-stack apps with Cursor and Claude',
 			photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop',
 			url: 'https://example.com/jane',
+			threads: 'https://www.threads.com/@example',
+			slidesUrl: '/slides/example/1',
 		},
 		{
 			name: 'Alex Chen',

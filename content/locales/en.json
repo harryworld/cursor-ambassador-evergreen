@@ -38,6 +38,7 @@
 		"highlights": "Community feedback",
 		"resources": "Resources",
 		"by": "by",
+		"speakerThreads": "{name} on Threads",
 		"galleryTitle": "Photos",
 		"gallerySubtitle": "{count} photos from the day",
 		"openPhoto": "Open photo {index}",

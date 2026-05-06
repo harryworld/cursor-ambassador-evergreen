@@ -7,7 +7,7 @@ export const featuredResource: FeaturedResource = {
 	description:
 		'Hands-on meetups in Taipei and across Taiwan for builders who want to ship faster with Cursor and real-world workflows.',
 	descriptionLocal: '在台北與全台舉辦的實作聚會，用真實工作流程與 Cursor 一起把想法做成產品。',
-	href: '/slides/1',
+	href: '/slides/example/1',
 	ctaLabel: 'View slides',
 	ctaLabelLocal: '查看簡報',
 };
