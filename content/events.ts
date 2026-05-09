@@ -27,7 +27,7 @@ export const events: CursorEvent[] = [
 		title: 'Cursor Meetup Tainan 台南',
 		date: '2026-05-09',
 		displayDate: 'May 9, 2026',
-		location: 'Good Ideas Studio, West Central District, Tainan City',
+		location: 'Lane Corner Coffee, East District, Tainan City',
 		lumaUrl: 'https://luma.com/rlyavutm',
 		status: 'upcoming',
 	},
