@@ -42,6 +42,8 @@ function buildHomeJsonLd() {
 }
 
 const Home: React.FC = () => {
+	const hasUpcomingEvents = upcomingEvents.length > 0;
+
 	return (
 		<main className="min-h-screen bg-cursor-bg text-cursor-text scroll-smooth">
 			<JsonLd data={buildHomeJsonLd()} />
@@ -53,8 +55,12 @@ const Home: React.FC = () => {
 				<SectionDivider />
 				<FeaturedSection />
 				<SectionDivider />
-				<UpcomingEvents />
-				<SectionDivider />
+				{hasUpcomingEvents ? (
+					<>
+						<UpcomingEvents />
+						<SectionDivider />
+					</>
+				) : null}
 				<PastEvents />
 				<SectionDivider />
 				<GlobalEvents />

@@ -1,7 +1,7 @@
 import { HeaderPhoto } from '@/lib/types';
 
 const tc = '/images/events/cursor-taichung/1/thumbs';
-const tn = '/images/events/cursor-tainan/thumbs';
+const tn = '/images/events/cursor-tainan/1/thumbs';
 
 // Desktop: 4×4 — shuffled layout (two 2×2 corners, tall edges, pair of singles in row 2).
 // Mobile: 2×4 — big tile on top, two singles, wide strip on bottom.

@@ -1,6 +1,6 @@
 import { GalleryPhoto, RecapData } from '@/lib/types';
 
-const base = '/images/events/cursor-tainan';
+const base = '/images/events/cursor-tainan/1';
 
 function photo(file: string, alt: string): GalleryPhoto {
 	return {

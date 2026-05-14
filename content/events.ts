@@ -2,11 +2,27 @@ import { CursorEvent } from '@/lib/types';
 
 const taichungThumbDir = '/images/events/cursor-taichung/1/thumbs';
 const taichungApr2026ThumbDir = '/images/events/cursor-taichung/2/thumbs';
-const tainanThumbDir = '/images/events/cursor-tainan/thumbs';
+const tainanThumbDir = '/images/events/cursor-tainan/1/thumbs';
+const tainanMay2026ThumbDir = '/images/events/cursor-tainan/2/thumbs';
 
 // Upcoming: https://luma.com/cursor-taiwan
 // Past: Taiwan-only — Luma pages verified where linked.
 export const events: CursorEvent[] = [
+	{
+		id: 'cursor-meetup-tainan',
+		title: 'Cursor Meetup Tainan 台南',
+		date: '2026-05-09',
+		displayDate: 'May 9, 2026',
+		location: 'Lane Corner Coffee, East District, Tainan City',
+		lumaUrl: 'https://luma.com/rlyavutm',
+		recapPath: '/recaps/cursor-meetup-tainan-may-2026',
+		thumbnail: `${tainanMay2026ThumbDir}/AD76A656-1770-432C-B595-AE96DEAECD22.jpeg`,
+		galleryImages: [
+			`${tainanMay2026ThumbDir}/3895ADCD-C0A4-499A-BE62-A795A7413AEA_1_105_c.jpeg`,
+			`${tainanMay2026ThumbDir}/EC9FFF28-C410-4D34-AB38-BDA578801A2E_1_105_c.jpeg`,
+		],
+		status: 'past',
+	},
 	{
 		id: 'cursor-meetup-taichung-apr-2026',
 		title: 'Cursor Meetup Taichung',
@@ -21,15 +37,6 @@ export const events: CursorEvent[] = [
 			`${taichungApr2026ThumbDir}/PXL_20260419_044405150.jpg`,
 		],
 		status: 'past',
-	},
-	{
-		id: 'cursor-meetup-tainan',
-		title: 'Cursor Meetup Tainan 台南',
-		date: '2026-05-09',
-		displayDate: 'May 9, 2026',
-		location: 'Lane Corner Coffee, East District, Tainan City',
-		lumaUrl: 'https://luma.com/rlyavutm',
-		status: 'upcoming',
 	},
 	{
 		id: 'cursor-meetup-tainan-jan-2026',

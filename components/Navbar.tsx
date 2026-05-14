@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import LanguageToggle from '@/components/LanguageToggle'
 import { siteConfig } from '@/content/site.config'
+import { upcomingEvents } from '@/content/events'
 
 const NAV_LINKS = [
   { href: '#upcoming', key: 'home.upcomingEvents' },
@@ -45,6 +46,9 @@ export default function Navbar() {
   const { t } = useI18n()
   const { scrolled, activeSection } = useScrollState()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const navLinks = upcomingEvents.length > 0
+    ? NAV_LINKS
+    : NAV_LINKS.filter(({ href }) => href !== '#upcoming')
 
   const closeMobile = useCallback(() => setMobileOpen(false), [])
 
@@ -91,7 +95,7 @@ export default function Navbar() {
           </a>
 
           <div className="hidden sm:flex items-center gap-6">
-            {NAV_LINKS.map(({ href, key }) => {
+            {navLinks.map(({ href, key }) => {
               const sectionId = href.replace('#', '')
               const isActive = activeSection === sectionId
               return (
@@ -135,7 +139,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="fixed inset-0 top-14 z-30 bg-cursor-bg/95 backdrop-blur-md sm:hidden">
           <div className="flex flex-col items-center gap-6 pt-12">
-            {NAV_LINKS.map(({ href, key }) => (
+            {navLinks.map(({ href, key }) => (
               <a
                 key={href}
                 href={href}
