@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { upcomingEvents } from '@/content/events';
 import { useI18n } from '@/lib/i18n';
@@ -23,6 +24,7 @@ const UpcomingEvents: React.FC = () => {
 		});
 
 	const city = featured.location.split(',')[0].trim();
+	const featuredHasGallery = Boolean(featured.galleryImages && featured.galleryImages.length > 0);
 
 	return (
 		<motion.section
@@ -46,31 +48,56 @@ const UpcomingEvents: React.FC = () => {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, margin: '-50px' }}
 				transition={{ duration: 0.4 }}
-				className="relative overflow-hidden bg-cursor-surface border border-cursor-border border-l-2 border-l-cursor-accent-blue rounded-lg p-5 mb-6"
+				className="relative overflow-hidden bg-cursor-surface border border-cursor-border border-l-2 border-l-cursor-accent-blue rounded-lg mb-6"
 			>
 				{/* Glow backdrop */}
 				<div className="pointer-events-none absolute -inset-px rounded-lg bg-[radial-gradient(ellipse_at_bottom_left,rgba(168,180,200,0.06),transparent_60%)]" />
-				<div className="flex items-center gap-2 text-sm text-cursor-text-muted mb-2">
-					<span className="relative flex h-2.5 w-2.5">
-						<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cursor-accent-blue opacity-75" />
-						<span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cursor-accent-blue" />
-					</span>
-					<span>{formatDate(featured.date, 'long')}</span>
-					<span className="text-cursor-text-faint">&middot;</span>
-					<span>{city}</span>
-				</div>
-				<h3 className="text-2xl font-bold text-cursor-text mb-3">{featured.title}</h3>
-				{featured.lumaUrl ? (
-					<a
-						href={featured.lumaUrl}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="inline-flex items-center gap-2 bg-cursor-text text-cursor-bg rounded-md px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+				{featured.thumbnail ? (
+					<div
+						className={`relative aspect-[2/1] overflow-hidden ${
+							featuredHasGallery ? 'grid grid-cols-3 grid-rows-2 gap-1' : ''
+						}`}
 					>
-						{t('home.register')}
-						<ExternalLink className="w-3.5 h-3.5" />
-					</a>
+						<div className={featuredHasGallery ? 'relative min-h-0 col-span-2 row-span-2' : 'absolute inset-0'}>
+							<Image
+								src={featured.thumbnail}
+								alt={featured.title}
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, 60vw"
+							/>
+						</div>
+						{featuredHasGallery &&
+							featured.galleryImages!.slice(0, 2).map((img, i) => (
+								<div key={i} className="relative min-h-0">
+									<Image src={img} alt="" fill className="object-cover" sizes="(max-width: 768px) 33vw, 20vw" />
+								</div>
+							))}
+					</div>
 				) : null}
+				<div className="p-5">
+					<div className="flex items-center gap-2 text-sm text-cursor-text-muted mb-2">
+						<span className="relative flex h-2.5 w-2.5">
+							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cursor-accent-blue opacity-75" />
+							<span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cursor-accent-blue" />
+						</span>
+						<span>{formatDate(featured.date, 'long')}</span>
+						<span className="text-cursor-text-faint">&middot;</span>
+						<span>{city}</span>
+					</div>
+					<h3 className="text-2xl font-bold text-cursor-text mb-3">{featured.title}</h3>
+					{featured.lumaUrl ? (
+						<a
+							href={featured.lumaUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2 bg-cursor-text text-cursor-bg rounded-md px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+						>
+							{t('home.register')}
+							<ExternalLink className="w-3.5 h-3.5" />
+						</a>
+					) : null}
+				</div>
 			</motion.div>
 
 			{/* Remaining events */}
