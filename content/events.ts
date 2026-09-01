@@ -9,6 +9,16 @@ const tainanMay2026ThumbDir = '/images/events/cursor-tainan/2/thumbs';
 // Past: Taiwan-only — Luma pages verified where linked.
 export const events: CursorEvent[] = [
 	{
+		id: 'cursor-for-dev-marketers-taipei-sep-2026',
+		title: 'Cursor for Dev Marketers: Taipei, with Josh Kim',
+		date: '2026-09-02',
+		displayDate: 'September 2, 2026',
+		// Exact venue is registration-gated on Luma; district only, per Luma listing.
+		location: 'Da’an District, Taipei City',
+		lumaUrl: 'https://luma.com/cursor-meetup-taipei-4',
+		status: 'upcoming',
+	},
+	{
 		id: 'cursor-meetup-tainan',
 		title: 'Cursor Meetup Tainan 台南',
 		date: '2026-05-09',
