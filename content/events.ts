@@ -4,6 +4,7 @@ const taichungThumbDir = '/images/events/cursor-taichung/1/thumbs';
 const taichungApr2026ThumbDir = '/images/events/cursor-taichung/2/thumbs';
 const tainanThumbDir = '/images/events/cursor-tainan/1/thumbs';
 const tainanMay2026ThumbDir = '/images/events/cursor-tainan/2/thumbs';
+const taipeiSep2026ThumbDir = '/images/events/cursor-taipei/1/thumbs';
 
 // Upcoming: https://luma.com/cursor-taiwan
 // Past: Taiwan-only — Luma pages verified where linked.
@@ -16,6 +17,9 @@ export const events: CursorEvent[] = [
 		// Exact venue is registration-gated on Luma; district only, per Luma listing.
 		location: 'Da’an District, Taipei City',
 		lumaUrl: 'https://luma.com/cursor-meetup-taipei-4',
+		// Placeholder artwork until the event happens; swap for real photos in the recap.
+		thumbnail: `${taipeiSep2026ThumbDir}/luma-social-card.jpg`,
+		galleryImages: [`${taipeiSep2026ThumbDir}/placeholder-1.jpg`, `${taipeiSep2026ThumbDir}/placeholder-2.jpg`],
 		status: 'upcoming',
 	},
 	{
