@@ -2,6 +2,7 @@ import { CursorEvent } from '@/lib/types';
 
 const taichungThumbDir = '/images/events/cursor-taichung/1/thumbs';
 const taichungApr2026ThumbDir = '/images/events/cursor-taichung/2/thumbs';
+const taichungSep2026ThumbDir = '/images/events/cursor-taichung/3/thumbs';
 const tainanThumbDir = '/images/events/cursor-tainan/1/thumbs';
 const tainanMay2026ThumbDir = '/images/events/cursor-tainan/2/thumbs';
 const taipeiSep2026ThumbDir = '/images/events/cursor-taipei/1/thumbs';
@@ -9,6 +10,21 @@ const taipeiSep2026ThumbDir = '/images/events/cursor-taipei/1/thumbs';
 // Upcoming: https://luma.com/cursor-taiwan
 // Past: Taiwan-only — Luma pages verified where linked.
 export const events: CursorEvent[] = [
+	{
+		id: 'cursor-meetup-taichung-sep-2026',
+		title: 'Cursor Meetup Taichung',
+		date: '2026-09-01',
+		displayDate: 'September 1, 2026',
+		location: 'Monospace 共同工作空間, West District, Taichung City',
+		lumaUrl: 'https://luma.com/cursor-meetup-taichung-3',
+		// Placeholder artwork until the event happens; swap for real photos in the recap.
+		thumbnail: `${taichungSep2026ThumbDir}/luma-social-card.jpg`,
+		galleryImages: [
+			`${taichungSep2026ThumbDir}/placeholder-1.jpg`,
+			`${taichungSep2026ThumbDir}/placeholder-2.jpg`,
+		],
+		status: 'upcoming',
+	},
 	{
 		id: 'cursor-for-dev-marketers-taipei-sep-2026',
 		title: 'Cursor for Dev Marketers: Taipei, with Josh Kim',
